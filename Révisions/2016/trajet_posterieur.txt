@@ -1,0 +1,6 @@
+#!/bin/bash
+
+IFS=','
+trajet_direct "$1" "$2" "$4" | while read id d a; do
+    if date_posterieure $3 $d; then echo "$id,$d,$a"; fi
+done

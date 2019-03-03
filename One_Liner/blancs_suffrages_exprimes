@@ -1,0 +1,39 @@
+#! /bin/bash
+
+#col 10 blancs
+#col 23 macron
+#col 30 le pen
+
+cut -d ";" -f10,23,30  $1 | {
+
+    macron=0
+    lepen=0
+    blancs=0
+
+    IFS=";"
+    
+    while read var1 var2 var3
+    do
+	macron=$(($macron+$var2))
+	lepen=$(($lepen+$var3))
+	blancs=$(($blancs+$var1))
+    done
+
+    
+    votantsAvec=$(($macron+$lepen+$blancs))
+    votantsSans=$(($macron+$lepen))
+
+    echo -n "Sans votes blancs:" `echo "scale=2;100*$macron/$votantsSans" | bc` 
+    echo -n "% Macron |" `echo "scale=2;100*$lepen/$votantsSans" | bc`
+    echo "% Le Pen"
+
+    echo -n "Avec votes blancs:" `echo "scale=2;100*$macron/$votantsAvec" | bc`
+    echo -n "% Macron |" `echo "scale=2;100*$lepen/$votantsAvec" | bc`
+    echo -n "% Le Pen |" `echo "scale=2;100*$blancs/$votantsAvec" | bc`
+    echo "% blancs"
+
+}
+
+
+
+	

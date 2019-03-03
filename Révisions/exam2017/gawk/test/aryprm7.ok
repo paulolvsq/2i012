@@ -1,0 +1,1 @@
+gawk: aryprm7.awk:2: fatal: attempt to use scalar parameter `y' as an array

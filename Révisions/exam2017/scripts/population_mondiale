@@ -1,0 +1,11 @@
+#! /bin/bash
+
+cut -d';' -f $(($1-1978)) $2 | grep -v -e '--' | {
+    somme=0
+    while read population
+    do
+	somme=$((somme+population))
+    done
+    echo "$somme"
+}
+

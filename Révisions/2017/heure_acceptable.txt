@@ -1,0 +1,22 @@
+#!/bin/bash
+# heure_ouvrable num_appelant heure_appelant num_appele deb_plage_appele fin_plage_appele fichier
+
+IFS=';'
+heure_appelant=$2
+loc_appelant=`localisation_numero $1 $6`
+loc_appele=`localisation_numero $3 $6`
+deb=$4
+fin=$5
+set $loc_appelant
+fuseau_appelant=$4
+set $loc_appele
+fuseau_appele=$4
+
+if [[ -n "$fuseau_appelant" && -n "fuseau_appele" ]] ; then
+    decalage_appelant=${fuseau_appelant/UTC+/}
+    decalage_appele=${fuseau_appele/UTC+/}
+    h=$((heure_appelant+decalage_appele-decalage_appelant))
+    [[ $h -ge $deb && $h -lt $fin ]]
+else
+    exit 0
+fi

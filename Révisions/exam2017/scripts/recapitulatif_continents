@@ -1,0 +1,10 @@
+#! /bin/bash
+
+cut -d':' -f2 $3 | sort -u | 
+    while read c; do
+        echo -ne "$c"
+        n=${#c}
+        while [[ $n -lt 25 ]]; do echo -n " "; n=$((n+1)); done
+        echo -n ";"
+        grep ": $c\$" $3 | cut -d':' -f1 | total_liste_pays $1 $2 
+    done | sort -t';' -k2nr 

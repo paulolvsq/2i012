@@ -1,0 +1,13 @@
+#!/bin/bash
+
+IFS=','
+trajet_direct "$1" "$3" $4 | while read id1 d1 a1; do
+    trajet_posterieur "$3" "$2" "$a1" $4 | { read id2 d2 a2 
+    if [[ -n "$id2" ]]; then
+        echo "Train $id1"
+        echo "  $1 départ $d1 - $3 arrivée $a1"
+        echo "puis train $id2"
+        echo "  $3 départ $d2 - $2 arrivée $a2"
+    fi; }
+done
+

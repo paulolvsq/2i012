@@ -1,0 +1,3 @@
+#! /bin/bash
+
+sort -t';' -rnk$1 | head -n1

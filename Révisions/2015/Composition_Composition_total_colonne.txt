@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cut -d';' -f $1 | { s=0; while read nb; do s=$((s+nb)); done; echo $s; }

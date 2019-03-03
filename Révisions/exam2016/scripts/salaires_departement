@@ -1,0 +1,10 @@
+#! /bin/bash
+
+grep ";$1;" $2 | cut -d';' -f4 | {
+    somme=0
+    while read salaire
+    do
+	somme=$((somme + salaire))
+    done
+    echo $somme
+}

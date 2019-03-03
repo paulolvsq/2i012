@@ -1,0 +1,6 @@
+#! /bin/bash
+
+annee=$(($1 - 1978))
+
+cut -d';' -f1,$annee $2 | sort -t';' -k2nr | tr ';' ':'
+

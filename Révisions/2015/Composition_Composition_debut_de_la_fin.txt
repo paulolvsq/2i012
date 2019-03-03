@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --debut=*) d=`sed -r 's/--debut=//' <<< "$1"`;;
+        --fin=*) f=`sed -r 's/--fin=//' <<< "$1"`;;
+        -nb) opt="-c";;
+        *) fichier=$1;;
+    esac
+    shift
+done
+
+cut -d';' -f3 $fichier | grep $opt "^$d.*$f$" 

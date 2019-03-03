@@ -1,0 +1,5 @@
+#!/bin/bash
+
+communes_plusieurs_departements $1 | while read v; do 
+    echo -n "$v;"; grep -c "^[^;]*;[^;]*;$v;" $1
+done | sort -t';' -nr -k2

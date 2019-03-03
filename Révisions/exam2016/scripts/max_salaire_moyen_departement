@@ -1,0 +1,37 @@
+#! /bin/bash
+
+# ./liste_departements $1 | {
+#     moy=0
+#     total=0
+#     moy_dep=0
+#     nb_employes_dep=0
+#     departement=''
+#     while read dep
+#     do
+	
+# 	total=`./salaires_departement "$dep" $1`
+# 	nb_employes_dep=`./effectif_departement "$dep" $1`
+# 	moy_dep=$((total/nb_employes_dep))
+	
+# 	if [[ "$moy" -gt "$moy_dep" ]]
+# 	then
+# 	    moy=$moy_dep
+# 	    departement=$dep
+# 	fi
+	
+#     done
+
+#     echo "Departement "$dep" avec un salaire moyen de "$moy""
+# }
+
+./liste_departements $1 | {
+    while read departement
+    do
+	effectif=`./effectif_departement "$departement" $1`
+	salaire=`./salaires_departement "$departement" $1`
+	echo "$departement;$((salaire/effectif))"
+    done | sort -t';' -nrk2 | head -n1 | sed -E 's/(.*)\;(.*)/Departement \1 avec un salaire moyen de $\2/'
+}
+
+
+    

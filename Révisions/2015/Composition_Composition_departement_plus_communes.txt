@@ -1,0 +1,4 @@
+#! /bin/bash
+
+cut -d \; -f 1 $1 | uniq -c | sort -nr -k1 | head -n1 | \
+sed -r 's/^[[:space:]]+([[:digit:]]+) (.+)$/Département \2 avec \1 communes/'

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+case "$1" in
+'Eva Joly') c=7;;
+'Marine Le Pen') c=8;;
+'Nicolas Sarkozy') c=9;;
+'Jean-Luc Mélenchon') c=10;;
+'Philippe Poutou') c=11;;
+'Nathalie Arthaud') c=12;;
+'Jacques Cheminade') c=13;;
+'Francois Bayrou') c=14;;
+'Nicolas Dupont-Aignan') c=15;;
+'Francois Hollande') c=16;;
+esac
+
+f=`mktemp`
+for d in `codes_departements $2`; do
+    resultats_departement $d $2 > $f
+    inscrits=`total_colonne 4 < $f`
+    votes=`total_colonne $c < $f`
+    echo "$d;$((votes*100/inscrits))"
+done | sort -rn -t';' -k2
+rm $f
+
+
+

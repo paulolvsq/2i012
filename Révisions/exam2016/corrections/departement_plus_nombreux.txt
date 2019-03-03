@@ -1,0 +1,5 @@
+#!/bin/bash
+
+liste_departements $1 | while read d; do
+    echo "$d;$(effectif_departement "$d" $1)"
+done | sort -t';' -nr -k2 

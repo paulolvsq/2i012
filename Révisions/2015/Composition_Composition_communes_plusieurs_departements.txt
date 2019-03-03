@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cut -d';' -f3 $1 | sort | uniq -d 
+

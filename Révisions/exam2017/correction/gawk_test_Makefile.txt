@@ -1,0 +1,13 @@
+childin: childin.awk childin.in
+	@(LANGUAGE=en ../src/gawk -f childin.awk < childin.in 2>&1 | cmp -s - childin.ok && echo "test childin succeeded" ) || echo "test childin failed"
+
+compare: compare.awk compare.in
+	@(LANGUAGE=en ../src/gawk -f compare.awk < compare.in 2>&1 | cmp -s - compare.ok && echo "test compare succeeded" ) || echo "test compare failed"
+
+%: %.awk %.in %.ok
+	@(LANGUAGE=en ../src/gawk -f $< $*.in 2>&1 | cmp -s - $*.ok && echo "test $* succeeded" ) || echo "test $* failed"
+
+%: %.awk %.ok
+	@(LANGUAGE=en ../src/gawk -f $< 2>&1 | cmp -s - $*.ok && echo "test $* succeeded" ) || echo "test $* failed"
+
+include Makefile2

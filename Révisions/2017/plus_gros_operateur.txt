@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cut -d';' -f4 $1 | sort -u | while read op; do
+    echo "$op;$(nombre_lignes_operateur "$op" $1)"
+done | sort -t';' -k2 -nr | head -n1 | sed -r "s/(.*);(.*)/Opérateur \1 avec \2 lignes./"
+
+           

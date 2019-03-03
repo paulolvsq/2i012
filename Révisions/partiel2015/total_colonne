@@ -1,0 +1,10 @@
+#! /bin/bash
+
+cut -d';' -f$1 | {
+    somme=0
+    while read pop
+    do
+	somme=$((somme + pop))
+    done
+    echo $somme
+}

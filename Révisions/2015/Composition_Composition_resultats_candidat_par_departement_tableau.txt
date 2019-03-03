@@ -1,0 +1,22 @@
+#!/bin/bash
+
+declare -A numero
+numero['Eva Joly']=7
+numero['Marine Le Pen']=8
+numero['Nicolas Sarkozy']=9
+numero['Jean-Luc Mélenchon']=10
+numero['Philippe Poutou']=11
+numero['Nathalie Arthaud']=12
+numero['Jacques Cheminade']=13
+numero['Francois Bayrou']=14
+numero['Nicolas Dupont-Aignan']=15
+numero['Francois Hollande']=16
+
+f=`mktemp`
+for d in `codes_departements $2`; do
+    resultats_departement $d $2 > $f
+    inscrits=`total_colonne 4 < $f`
+    votes=`total_colonne ${numero[$1]} < $f`
+    echo "$d;$((votes*100/inscrits))"
+done | sort -rn -t';' -k2 
+rm -f $f

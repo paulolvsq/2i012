@@ -1,0 +1,5 @@
+#!/bin/bash
+
+grep -E "^$2\|" $3 | tr '|' '\n' | grep -E "^$1;" | cut -d';' -f4,5 | \
+{ IFS=";" read h v;
+  if [[ "$h" == "-" ]]; then echo "Terminus"; else echo "Départ $h voie $v"; fi }

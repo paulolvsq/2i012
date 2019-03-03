@@ -1,0 +1,2 @@
+gawk: fnmisc.awk:11: function split(x) { return x }
+gawk: fnmisc.awk:11:          ^ `split' is a built-in function, it cannot be redefined

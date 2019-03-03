@@ -1,0 +1,27 @@
+Bus 159|Saarbrücken Hbf;0;-;2016-03-23 22:35;-|Luxembourg;1;2016-03-23 23:50;-;-
+Bus 126|Luxembourg;0;-;2016-03-23 11:15;-|Saarbrücken Hbf;1;2016-03-23 12:35;-;-
+Bus 143|Saarbrücken Hbf;0;-;2016-03-23 19:30;-|Luxembourg;1;2016-03-23 20:45;-;-
+Bus50040|Frankfurt(Oder);0;-;2016-03-23 22:22;-|Berlin Hbf;1;2016-03-24 00:22;-;-
+Bus 130|Luxembourg;0;-;2016-03-23 13:15;-|Saarbrücken Hbf;1;2016-03-23 14:35;-;-
+Bus 118|Luxembourg;0;-;2016-03-23 07:15;-|Saarbrücken Hbf;1;2016-03-23 08:35;-;-
+Bus 123|Saarbrücken Hbf;0;-;2016-03-23 11:25;-|Luxembourg;1;2016-03-23 12:40;-;-
+Bus 146|Luxembourg;0;-;2016-03-23 17:40;-|Saarbrücken Hbf;1;2016-03-23 19:05;-;-
+Bus 135|Saarbrücken Hbf;0;-;2016-03-23 16:45;-|Luxembourg;1;2016-03-23 18:05;-;-
+Bus 155|Saarbrücken Hbf;0;-;2016-03-23 21:25;-|Luxembourg;1;2016-03-23 22:40;-;-
+Bus 115|Saarbrücken Hbf;0;-;2016-03-23 07:25;-|Luxembourg;1;2016-03-23 08:40;-;-
+Bus 139|Saarbrücken Hbf;0;-;2016-03-23 18:35;-|Luxembourg;1;2016-03-23 19:50;-;-
+Bus 158|Luxembourg;0;-;2016-03-23 20:10;-|Saarbrücken Hbf;1;2016-03-23 21:30;-;-
+Bus 150|Luxembourg;0;-;2016-03-23 18:25;-|Saarbrücken Hbf;1;2016-03-23 19:40;-;-
+Bus 117|Saarbrücken Hbf;0;-;2016-03-23 08:25;-|Luxembourg;1;2016-03-23 09:40;-;-
+Bus 154|Luxembourg;0;-;2016-03-23 19:10;-|Saarbrücken Hbf;1;2016-03-23 20:30;-;-
+Bus 134|Luxembourg;0;-;2016-03-23 15:15;-|Saarbrücken Hbf;1;2016-03-23 16:35;-;-
+Bus 131|Saarbrücken Hbf;0;-;2016-03-23 15:15;-|Luxembourg;1;2016-03-23 16:30;-;-
+Bus 113|Saarbrücken Hbf;0;-;2016-03-23 06:30;-|Luxembourg;1;2016-03-23 07:45;-;-
+Bus 142|Luxembourg;0;-;2016-03-23 17:10;-|Saarbrücken Hbf;1;2016-03-23 18:30;-;-
+Bus 122|Luxembourg;0;-;2016-03-23 09:15;-|Saarbrücken Hbf;1;2016-03-23 10:35;-;-
+Bus 119|Saarbrücken Hbf;0;-;2016-03-23 09:25;-|Luxembourg;1;2016-03-23 10:40;-;-
+Bus 116|Luxembourg;0;-;2016-03-23 06:15;-|Saarbrücken Hbf;1;2016-03-23 07:35;-;-
+Bus 157|Saarbrücken Hbf;0;-;2016-03-23 21:30;-|Luxembourg;1;2016-03-23 22:45;-;-
+Bus 138|Luxembourg;0;-;2016-03-23 16:15;-|Saarbrücken Hbf;1;2016-03-23 17:35;-;-
+Bus 149|Saarbrücken Hbf;0;-;2016-03-23 20:30;-|Luxembourg;1;2016-03-23 21:45;-;-
+Bus 127|Saarbrücken Hbf;0;-;2016-03-23 13:25;-|Luxembourg;1;2016-03-23 14:40;-;-

@@ -1,0 +1,17 @@
+#!/bin/bash
+IFS=';'
+max=0
+dptmax=''
+
+declare -A salaires
+declare -A effectifs
+
+while read nom poste dpt salaire; do
+      salaires[$dpt]=$((${salaires[$dpt]}+$salaire))
+      effectifs[$dpt]=$((${effectifs[$dpt]}+1))
+done < $1
+for dpt in ${!effectifs[@]}; do
+    m=$((${salaires[$dpt]}/${effectifs[$dpt]}))
+    if [[ $m -gt $max ]]; then max=$m; dptmax=$dpt; fi
+done
+echo "Département $dptmax avec un salaire moyen de $max"

@@ -1,0 +1,9 @@
+#! /bin/bash
+
+./liste_departements $1 | {
+    while read dep
+    do
+	echo "$dep;$(./effectif_departement "$dep" $1)"
+    done | sort -t';' -nrk2 
+}
+

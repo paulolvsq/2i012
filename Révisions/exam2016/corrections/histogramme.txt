@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ $# -gt 1 ]]; then GRAPHICS="x"; shift; fi
+cut -d';' -f4 $1 | { \
+    declare -A tab
+    while read salaire; do
+        d=$(((salaire/5000)*5000))
+        f=$((d+4999))
+        t="$d à $f"
+        tab[$t]=$((${tab[$t]}+1))
+    done  
+    for t in "${!tab[@]}"; do
+        echo "$t;${tab[$t]}" 
+    done | sort -t' ' -k1n 
+} | \
+if [[ -z $GRAPHICS ]]
+then sed -r 's/(.*)\;([0-9]*)$/\1\t\t\2/' 
+else histo 
+fi

@@ -1,0 +1,13 @@
+DESTDIR = /usr/local
+
+all clean:
+	cd src; $(MAKE) $@
+	cd doc; $(MAKE) $@
+
+install:
+	cd src; $(MAKE) install DESTDIR=$(DESTDIR)
+	cd doc; $(MAKE) install DESTDIR=$(DESTDIR)
+	mkdir -p $(DESTDIR)/share/gawk
+	cp AUTHORS COPYING ChangeLog INSTALL NEWS POSIX.STD README $(DESTDIR)/share/gawk
+
+.PHONY: all clean install

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+IFS=";"
+n=$(($1-1)) # la numérotation dans les tableaux commence à 0
+s=0
+while read -a tab; do
+    s=$((s+${tab[$n]}))
+done
+echo $s
+        

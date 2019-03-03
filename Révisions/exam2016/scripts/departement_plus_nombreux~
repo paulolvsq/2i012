@@ -1,0 +1,8 @@
+#! /bin/bash
+
+departements=`./liste_departements $1`
+
+while read dep
+do
+    echo "$dep,`./effectif_departement "$dep" $1`"
+done <<< departements

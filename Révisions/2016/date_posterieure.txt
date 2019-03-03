@@ -1,0 +1,5 @@
+#!/bin/bash
+
+s1=`conversion_date_secondes "$1"`
+s2=`conversion_date_secondes "$2"`
+[[ $s2 -gt $s1 ]]

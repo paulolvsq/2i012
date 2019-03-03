@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while read pays; do
+    grep "^$pays;" $2 | cut -d';' -f$(($1-1978))
+done | grep -v -e '--' | { s=0; while read nb; do s=$((s+nb)); done; echo $s; }

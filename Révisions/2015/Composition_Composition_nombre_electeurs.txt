@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$(total_colonne 4 <$1) inscrits"

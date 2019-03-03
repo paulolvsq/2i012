@@ -1,0 +1,17 @@
+#! /bin/bash
+
+annee=$(($1 - 1978))
+
+while read pays
+do
+    grep "^$pays;" $2 | cut -d';' -f$annee
+done | grep -v -e '--' | {
+    somme=0
+    while read population
+    do
+	somme=$((population+somme))
+    done
+    echo "$somme"
+}
+
+

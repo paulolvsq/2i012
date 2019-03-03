@@ -1,0 +1,4 @@
+#! /bin/bash
+
+inscrits=`./total_colonne 4 < $1`
+echo "$inscrits inscrits"

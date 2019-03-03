@@ -1,0 +1,10 @@
+#! /bin/bash
+
+grep "^$1;" $4 | cut -d';' -f$(($2-1978)),$(($3-1978)) | {
+    IFS=";"
+    read nb1 nb2
+    if [[ -z "$nb1" ]]; then echo "NC" 1>&2; exit 1;fi
+    if [[ "$nb1" == "--" || "$nb2" == "--" ]]; then echo "NA" 1>&2; exit 2; fi
+    diff=$((nb2-nb1))
+    echo $((($diff*100)/$nb1))
+}

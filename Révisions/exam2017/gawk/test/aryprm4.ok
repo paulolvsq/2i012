@@ -1,0 +1,1 @@
+gawk: aryprm4.awk:6: fatal: attempt to use scalar `a' as an array

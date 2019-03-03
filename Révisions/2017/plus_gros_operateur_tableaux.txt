@@ -1,0 +1,8 @@
+#!/bin/bash
+
+IFS=";"
+declare -A tab
+while read p d q op reste; do
+    tab["$op"]=$((${tab[$op]}+q))
+done < $1
+for op in "${!tab[@]}"; do echo "$op;${tab[$op]}"; done | sort -t';' -nrk2 | head -n1 | cut -d';' -f1

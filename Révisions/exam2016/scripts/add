@@ -1,0 +1,8 @@
+#! /bin/bash
+
+somme=0
+while read nombre
+do
+    somme=$((somme + nombre))
+done
+echo $somme

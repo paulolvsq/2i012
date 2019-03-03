@@ -1,0 +1,4 @@
+#! /bin/bash
+
+echo "Min : `cut -d';' -f4 $1 | sort -n | head -n1`"
+echo "Max : `cut -d';' -f4 $1 | sort -nr | head -n1`"

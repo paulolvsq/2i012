@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tmp=`mktemp`
+cut -d';' -f4 $1 | sort -n > $tmp
+echo "Min: `head -n1 $tmp`"
+echo "Max: `tail -n1 $tmp`"
+rm $tmp
